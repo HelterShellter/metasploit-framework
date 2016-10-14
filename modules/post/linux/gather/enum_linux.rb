@@ -139,7 +139,7 @@ class MetasploitModule < Msf::Post
     commands.each do |command|
       result = ''
       output = execute(command)
-      data = "enum-linux $ #{command}" + output
+      data = "enum-linux $ #{command}\n" + output
       result << data if output
       save(command, result) if result
     end
